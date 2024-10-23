@@ -1,0 +1,43 @@
+Web estática para clientes en Antioquía
+
+Publicaría la página web estática en Amazon S3 de AWS. Es simple, barato y permite distribuir contenido rápidamente usando CloudFront, que mejora el acceso en Antioquía gracias a sus puntos de entrega cercanos. AWS también es confiable y garantiza que la página siempre esté disponible.
+
+Web dinámica para clientes en Europa y Suramérica
+
+Para una web dinámica, elegiría Google Cloud o Azure, ya que tienen centros de datos cercanos tanto en Europa como en América del Sur. Ofrecen buen rendimiento y escalabilidad automática para manejar tráfico variable. Ambos servicios permiten configurar servidores web y bases de datos con baja latencia en esas regiones.
+
+Uso de contenedores
+
+Sí, usaría contenedores para ambas webs (estática y dinámica). Los contenedores garantizan que el entorno sea siempre el mismo sin importar dónde se despliegue. Además, permiten fácil escalabilidad en webs dinámicas y actualizaciones rápidas en webs estáticas.
+
+- Guardar la imagen en DigitalOcean
+
+Para guardar la imagen en el registry de DigitalOcean:
+
+1. Marcamos la imagen:
+
+docker tag nginx-agradecimiento registry.digitalocean.com/mi-registro/nginx-agradecimiento:latest
+
+
+2. Iniciamos sesion:
+
+docker login registry.digitalocean.com
+
+
+3. Subimos la imagen:
+
+docker push registry.digitalocean.com/mi-registro/nginx-agradecimiento:latest
+
+
+
+Máquina virtual: ¿Infraestructura o software?
+
+Una máquina virtual en la nube es infraestructura (IaaS). Te dan los recursos como almacenamiento, redes y cómputo para que configures tu servidor desde cero, en lugar de entregarte una aplicación lista para usar.
+
+¿Qué tipo de servicio deberían usar los puntos 3, 4 y 6?
+
+Punto 3 (Instanciar nginx): Aquí usaría IaaS, que te permite controlar el servidor y su configuración.
+
+Punto 4 (Generar una imagen de nginx): Usaría PaaS o CaaS (como Cloud Run o AWS Fargate), para ejecutar los contenedores sin gestionar el servidor.
+
+Punto 6 (Subir la imagen a un registry privado): Esto es SaaS. Solo necesitas acceder a un servicio como DigitalOcean o Docker Hub para gestionar tus imágenes.
